@@ -152,8 +152,8 @@ export function Messenger() {
  
   useEffect(() => {
     db.collection('rooms')
-      //.doc(value)
-      .onSnapshot((snapshot: any)=>{
+      
+      .onSnapshot((snapshot: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>)=>{
         const rooms=(snapshot.docs.map((doc:any) => ({
         id:doc.id, 
          opisSobe: doc.data().opisSobe
