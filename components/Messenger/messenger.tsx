@@ -154,7 +154,7 @@ export function Messenger() {
     db.collection('rooms')
       
       .onSnapshot((snapshot: firebase.firestore.QuerySnapshot<firebase.firestore.DocumentData>)=>{
-        const rooms=(snapshot.docs.map((doc:any) => ({
+        const rooms=(snapshot.docs.map((doc) => ({
         id:doc.id, 
          opisSobe: doc.data().opisSobe
         })));
