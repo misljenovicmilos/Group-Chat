@@ -1,0 +1,95 @@
+.signUp-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -450px;
+  margin-left: -350px;
+  overflow-y: scroll;
+  width: 700px;
+  height: 900px;
+  border: 2px solid red;
+  font-family: helvetica;
+}
+.h1{
+ padding-left: 260px;
+  padding-top:100px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.col-1 {
+ padding-left: 250px;
+  padding-top:20px;
+}
+.col-2{
+  padding-left:250px;
+  padding-top:20px;
+}
+.col-3{
+  padding-left:250px;
+  padding-top:20px;
+}
+.col-4{
+  padding-left:250px;
+  padding-top:20px;
+}
+.col-5{
+  padding-left:250px;
+  padding-top:20px;
+}
+.col-6{
+  padding-left:250px;
+  padding-top:20px;
+}
+.username{
+  text-align:center;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  width: 200px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.email{
+  text-align:center;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  width: 200px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.password1{
+  text-align:center;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  width: 200px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.password2{
+  text-align:center;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  width: 200px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.btn-signUp {
+  background-color: #00FFFF;
+  text-align:border;
+  color:white;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  height: 30px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.p{
+  padding-right:225px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align:center;
+  font-weight: bolder;
+}
+.error{
+  color:red;
+  text-align:center;
+  padding-right:230px;
+}

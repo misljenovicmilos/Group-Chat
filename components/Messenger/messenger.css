@@ -1,0 +1,147 @@
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -450px;
+  margin-left: -650px;
+  overflow-y: scroll;
+  width: 1300px;
+  height: 900px;
+
+  font-family: helvetica;
+}
+.lista {
+  height: 800px;
+  width: 700px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.container-1 {
+  position: fixed;
+  padding-left: 70px;
+  button: 160px;
+}
+.container-2 {
+  position: fixed;
+  padding-left: 875px;
+  top: 150px;
+}
+.inputype {
+  width: 350px;
+  height: 30px;
+  border-radius: 30px;
+  text-align: center;
+  border: none;
+  outline: none;
+  overflow-y: scroll;
+}
+.rooms {
+  font-family: "Open Sans", "Helvetica Neue", "Segoe UI", "Calibri", "Arial",
+    sans-serif;
+  font-size: 18px;
+  color: #60666d;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  clear: both;
+  padding: 20px;
+  border-radius: 30px;
+  margin-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.li-him {
+  textalign: left;
+  float: left;
+  background-color: #0085d1;
+  max-width: 500px;
+}
+.list-users {
+  float: right;
+}
+.btn {
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+  height: 30px;
+}
+.botton-emoji {
+  height: 30px;
+  border: none;
+  border-radius: 30px;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  overflow-y: scroll;
+  width: 400px;
+  height: 400px;
+}
+.close-emoji {
+  font-weight: bolder;
+  font-size: 200%;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(31, 58, 147, 1);
+}
+.btn-signOut {
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+  height: 30px;
+}
+@media only screen and (max-width: 768px) {
+  div.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -512px;
+    margin-left: -384px;
+    overflow-y: scroll;
+    width: 768px;
+    height: 1024px;
+
+    font-family: helvetica;
+  }
+  div.lista {
+    position: fixed;
+    height: 600px;
+    width: 768px;
+    overflow-y: scroll;
+    margin: auto;
+  }
+  div.container-1 {
+    position: fixed;
+    overflow-y: scroll;
+    padding-left: 160px;
+    padding-top: 621px;
+  }
+  div.container-2 {
+    position: fixed;
+    padding-left: 260px;
+    padding-top: 700px;
+  }
+}
