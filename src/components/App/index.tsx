@@ -1,19 +1,31 @@
-import * as React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import * as routes from '../../routes';
-import { Signin } from '..//Singin/Signin';
-import { Signup } from '../Singup/Signup';
-import { Messenger } from '../Messenger/messenger';
-
+import * as React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import * as routes from "../../routes";
+import { SignIn } from "../Signin/SignIn";
+import { Signup } from "../Signup/SignUp";
+import { Messenger } from "../Messenger/Messenger";
+import { AppState } from "../../reducers";
+import { useSelector } from "react-redux";
+import SessionAccount from "../../actions/session";
 
 export function App() {
+  SessionAccount();
+  const authUserIsSignIn = useSelector(
+    (state: AppState) => state.sesionState.authUser
+  );
+  const userIsOnline = authUserIsSignIn.email;
+  const userLog = userIsOnline !== undefined ? true : false;
+  console.log("userLog", userLog);
   return (
     <BrowserRouter>
       <div>
         <Switch>
           <Route exact={true} path={routes.SING_UP} component={Signup} />
-          <Route exact={true} path={routes.MESSENGER} component={Messenger} />
-          <Route exact={true} path={routes.SING_IN} component={Signin} />
+          {userLog ? (
+            <Route path={routes.MESSENGER} component={Messenger} />
+          ) : (
+            <Route path={routes.SING_IN} component={SignIn} />
+          )}
         </Switch>
       </div>
     </BrowserRouter>

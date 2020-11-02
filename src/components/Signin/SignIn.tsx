@@ -1,8 +1,8 @@
-import { auth } from '../../firebase';
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import * as routes from '../../routes';
-import "./signIn.css"
+import { auth } from "../../firebase";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import * as routes from "../../routes";
+import "./SignIn.css";
 interface State {
   email?: string;
   password?: string;
@@ -10,10 +10,10 @@ interface State {
   [key: string]: string | undefined;
 }
 
-export function Signin() {
+export function SignIn() {
   let history = useHistory();
   const [error, seterror] = useState<string[]>();
-  const [state, setState] = useState<State>({ email: '', password: '' });
+  const [state, setState] = useState<State>({ email: "", password: "" });
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
     event.preventDefault();
@@ -35,37 +35,38 @@ export function Signin() {
         seterror(err.message);
       });
   }
-  console.log('error', error);
 
   return (
     <div className="container-signIn">
       <h1 className="h1">Group Chat</h1>
       <div className="email-signIn">
         <p className="p">Email:</p>
-      <input
-        type="email"
-        value={state.email}
-        className="emailsignIn"
-        name="email"
-        onChange={handleChange}
-        placeholder="Email"
-      /></div>
+        <input
+          type="email"
+          value={state.email}
+          className="emailsignIn"
+          name="email"
+          onChange={handleChange}
+          placeholder="Email"
+        />
+      </div>
       <div className="password-signIn">
         <p className="p">Password:</p>
-      <input
-        type="password"
-        className="passwordsignIn"
-        value={state.password}
-        name="password"
-        onChange={handleChange}
-        placeholder="Password"
-      /></div>
+        <input
+          type="password"
+          className="passwordsignIn"
+          value={state.password}
+          name="password"
+          onChange={handleChange}
+          placeholder="Password"
+        />
+      </div>
       <div className="button-signIn">
-      {error && <p className="error">{error}</p>}
-      
-      <button type="button" className="btn-signIn" onClick={handleClick}>
-        Sign In
-      </button>
+        {error && <p className="error">{error}</p>}
+
+        <button type="button" className="btn-signIn" onClick={handleClick}>
+          Sign In
+        </button>
       </div>
       <div className="tosignUp">
         <p>
