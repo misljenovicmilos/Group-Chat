@@ -7,7 +7,7 @@
   overflow-y: scroll;
   width: 700px;
   height: 900px;
-  border: 2px solid red;
+
   font-family: helvetica;
 }
 .h1 {
@@ -92,4 +92,17 @@
   color: red;
   text-align: center;
   padding-right: 230px;
+}
+@media only screen and (max-width: 768px) {
+  div.signUp-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -400px;
+    margin-left: -350px;
+    overflow-y: scroll;
+    width: 700px;
+    height: 900px;
+    font-family: helvetica;
+  }
 }

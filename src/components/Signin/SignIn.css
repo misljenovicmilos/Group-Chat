@@ -1,68 +1,70 @@
 .container-signIn {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -450px;
+  margin-left: -350px;
+  overflow-y: scroll;
+  width: 700px;
+  height: 900px;
+
+  font-family: helvetica;
+}
+.email-signIn {
+  position: relative;
+  padding-left: 250px;
+  padding-top: 20px;
+}
+.password-signIn {
+  position: relative;
+  padding-left: 250px;
+  padding-top: 20px;
+}
+.button-signIn {
+  position: relative;
+  padding-left: 250px;
+  padding-top: 30px;
+}
+.btn-signIn {
+  background-color: #00ffff;
+  text-align: border;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  height: 30px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.tosignUp {
+  padding-left: 230px;
+  padding-top: 30px;
+}
+.emailsignIn {
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  width: 200px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.passwordsignIn {
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  height: 30px;
+  width: 200px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  div.container-signIn {
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -450px;
+    margin-top: -350px;
     margin-left: -350px;
     overflow-y: scroll;
     width: 700px;
     height: 900px;
-  
-    border: 2px solid red;
-    
-    font-family: helvetica;
   }
-  .email-signIn{
-    position:relative;
-    padding-left: 250px;
-     padding-top:20px;
-
-  }
-  .password-signIn{
-    position:relative;
-    padding-left:250px;
-    padding-top:20px;
-  }
-  .button-signIn{
-    position:relative;
-    padding-left:250px;
-    padding-top:30px;
-
-  }
-  .btn-signIn{
-    background-color: #00FFFF;
-    text-align:border;
-    color:white;
-    border: none;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
-    height: 30px;
-    font-family: Helvetica, Arial, sans-serif;
-  }
-  .tosignUp{
-   
-    padding-left:230px;
-    padding-top:30px;
-  }
-  .emailsignIn{
-    
-        text-align:center;
-        border-radius: 10px;
-        border: none;
-        height: 30px;
-        width: 200px;
-        font-family: Helvetica, Arial, sans-serif;
-      
-  }
-  .passwordsignIn{
-    
-        text-align:center;
-        border-radius: 10px;
-        border: none;
-        height: 30px;
-        width: 200px;
-        font-family: Helvetica, Arial, sans-serif;
-      
-  }
-  
+}
