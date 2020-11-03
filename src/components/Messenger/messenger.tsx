@@ -20,7 +20,7 @@ interface Messages {
 }
 interface Rooms {
   id: string | number | null | undefined;
-  opisSobe?: string;
+  roomDescription?: string;
 }
 
 export function Messenger() {
@@ -36,6 +36,7 @@ export function Messenger() {
   const history = useHistory();
   const dispatch = useDispatch();
   const allEmoji = useSelector((state: AppState) => state.emojiState.emoji);
+  //check user
   const allUsersFromDatabase = useSelector(
     (state: AppState) => state.userState.users
   );
@@ -49,11 +50,12 @@ export function Messenger() {
   const allEmailFromDatabase = Object.keys(allUsersFromDatabase).map(
     (id) => allUsersFromDatabase[id]
   );
-  const userIsOnline = authUserIsSignIn.email;
+  const userIsCorrect = authUserIsSignIn.email;
   const Email = allEmailFromDatabase.filter(
-    (user) => user.email === userIsOnline
+    (user) => user.email === userIsCorrect
   );
-  const username = Email.map((item) => item.username);
+  //
+  const userName = Email.map((item) => item.username);
 
   useEffect(() => {
     db.collection("rooms")
@@ -67,7 +69,7 @@ export function Messenger() {
             firebase.firestore.DocumentData
           >
         ) => {
-          const newuser = snapshot.docs.map((doc) => ({
+          const newUser = snapshot.docs.map((doc) => ({
             id: doc.id,
             from: doc.data().from,
             text: doc.data().text,
@@ -75,7 +77,7 @@ export function Messenger() {
             timestamp: doc.data().timestamp,
           }));
 
-          setMessages(newuser);
+          setMessages(newUser);
         }
       );
   }, [value]);
@@ -84,7 +86,7 @@ export function Messenger() {
     if (event.key === "Enter") {
       const time = new Date();
       db.collection("rooms").doc(value).collection("Messages").add({
-        from: username,
+        from: userName,
         text: input,
         timestamp: time.getTime(),
       });
@@ -95,7 +97,7 @@ export function Messenger() {
     const time = new Date();
 
     db.collection("rooms").doc(value).collection("Messages").add({
-      from: username,
+      from: userName,
       text: input,
       timestamp: time.getTime(),
     });
@@ -145,7 +147,7 @@ export function Messenger() {
 
     fontWeight: "bolder",
   };
-  const righttime: CSSProperties = {
+  const rightTime: CSSProperties = {
     float: "left",
     fontWeight: "bolder",
   };
@@ -164,32 +166,32 @@ export function Messenger() {
       ) => {
         const rooms = snapshot.docs.map((doc) => ({
           id: doc.id,
-          opisSobe: doc.data().opisSobe,
+          roomDescription: doc.data().opisSobe,
         }));
         setValueRoom(rooms);
       }
     );
   }, [value]);
-  const valueroom = valueRoom.filter((user) => user.id === value);
-  const opisSobe = valueroom.map((item) => item.opisSobe);
+  const searchRoom = valueRoom.filter((user) => user.id === value);
+  const roomDescription = searchRoom.map((item) => item.roomDescription);
 
   return (
     <div className="container">
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <div className="lista">
+      <div className="list">
         {messages.map((message: Messages) => (
           <ul key={message.id}>
             <li
               className="li-him"
-              style={message.from[0] === username[0] ? right : undefined}
+              style={message.from[0] === userName[0] ? right : undefined}
             >
               {message.from}:{message.text}{" "}
             </li>
             <li
               className="li-time"
-              style={message.from[0] === username[0] ? time : righttime}
+              style={message.from[0] === userName[0] ? time : rightTime}
             >
               {new Date(message.timestamp).getHours()}:
               {new Date(message.timestamp).getMinutes()}
@@ -250,7 +252,7 @@ export function Messenger() {
         >
           SignOut
         </button>
-        <p>{opisSobe}</p>
+        <p>{roomDescription}</p>
       </div>
     </div>
   );
